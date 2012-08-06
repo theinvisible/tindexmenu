@@ -392,7 +392,7 @@ dTree.prototype.fill = function(id) {
     var n=id,eLoad,node,a,rd,ln,eDiv;
     if (this.aNodes[n].ajax) {
 	eLoad=jQuery('#l' + this.obj)[0];
-	node=jQuery('s'+this.obj+n)[0];
+	node=jQuery('#s'+this.obj+n)[0];
 	if (!eLoad) {eLoad=indexmenu_createPicker('l' + this.obj);}
 	eLoad.innerHTML='Loading ...';
 	jQuery('#s'+this.obj+n)[0].parentNode.appendChild(eLoad);
@@ -489,7 +489,7 @@ dTree.prototype.show_feat = function (n){
     var w,div,id,dtree,dtreel,self,node=jQuery('#s'+this.obj+n)[0];
     self=this;
     if (this.config.toc && node.className != "node") {
-	div=jQuery('t'+this.obj)[0];
+	div=jQuery('#t'+this.obj)[0];
 	id =(this.aNodes[n].hns) ? this.aNodes[n].hns : this.aNodes[n].dokuid;
 	div.onmousedown=function (){indexmenu_createTocMenu('req=toc&id='+decodeURIComponent(id),'picker_'+self.obj,'t'+self.obj);};
 	node.parentNode.appendChild(div);
@@ -514,10 +514,10 @@ dTree.prototype.show_feat = function (n){
 };
 
 dTree.prototype.resizescroll = function (status){
-    var dtree,w,h,left=jQuery('left_'+this.obj)[0];
+    var dtree,w,h,left=jQuery('#left_'+this.obj)[0];
     if (!left) {return;}
     if (left.style.display==status) {
-	dtree=jQuery('dtree_'+this.obj)[0];
+	dtree=jQuery('#dtree_'+this.obj)[0];
 	w=parseInt(dtree.offsetHeight/3,0);
 	h= parseInt(w/50,0)*50;
 	if (h < 50) {h=50;}
@@ -618,7 +618,7 @@ dTree.prototype.init = function(s,c,n,nav,max) {
   if (window.indexmenu_contextmenu) {
       var self = this;
       indexmenu_createPicker('r'+ this.obj,'indexmenu_rmenu '+this.config.theme);
-      jQuery('r'+ this.obj)[0].oncontextmenu=indexmenu_stopevt;
+      jQuery('#r'+ this.obj)[0].oncontextmenu=indexmenu_stopevt;
       addEvent(document, 'click', function() {self.divdisplay('r',0);});
   }
 };
