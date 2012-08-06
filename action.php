@@ -17,8 +17,8 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
    */
   function getInfo(){
     return array(
-		 'author' => 'Samuele Tognini',
-		 'email'  => 'samuele@netsons.org',
+		 'author' => 'Samuele Tognini mod. by Rene Hadler',
+		 'email'  => 'rene.hadler@iteas.at',
 		 'date'   => rtrim(io_readFile(DOKU_PLUGIN.'indexmenu/VERSION.txt')),
 		 'name'   => 'Indexmenu (action plugin component)',
 		 'desc'   => 'Indexmenu action functions.',
@@ -73,7 +73,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
     $event->data["script"][] = array (	"type" => "text/javascript",
 					"charset" => "utf-8",
 					"_data" => "",
-					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu.js"
+					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu-full.js"
 					);
  
     $event->data["script"][] = array (	"type" => "text/javascript",

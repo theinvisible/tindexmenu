@@ -149,4 +149,4 @@ function indexmenu_mouseposition(obj,e) {
     obj.style.top=Y-5+'px';
 }
 
-addInitEvent(indexmenu_loadtoolbar);
+jQuery(indexmenu_loadtoolbar);

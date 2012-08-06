@@ -277,7 +277,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
       $output .= "<script type='text/javascript' charset='utf-8'>\n";
       $output .= "<!--//--><![CDATA[//><!--\n";
       $output .= "indexmenu_nojsqueue.push(new Array('".$js_name."','".utf8_encodeFN($js_opts['jsajax'])."'));\n";
-      $output .= "addInitEvent(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/indexmenu/nojsindex.js');});\n";
+      $output .= "jQuery(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/indexmenu/nojsindex.js');});\n";
       $output .= "//--><!]]>\n";
       $output .= "</script>\n";
     }
@@ -323,7 +323,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
     $anodes = $this->_jsnodes($data,$js_name);
     $out .= $anodes[0];
     $out .= "document.write(".$js_name.");\n";
-    $out .= "addInitEvent(function(){".$js_name.".init(";
+    $out .= "jQuery(function(){".$js_name.".init(";
     $out .= (int) is_file(INDEXMENU_IMG_ABSDIR.'/'.$js_opts['theme'].'/style.css').",";
     $out .= (int) $js_opts['nocookie'].",";
     $out .= '"'.$anodes[1].'",';
