@@ -772,10 +772,12 @@ dTree.prototype.init = function(s, c, n, nav, max) {
 		var self = this;
 		indexmenu_createPicker('r' + this.obj, 'indexmenu_rmenu '
 				+ this.config.theme);
-		$('r' + this.obj).oncontextmenu = indexmenu_stopevt;
-		addEvent(document, 'click', function() {
-			self.divdisplay('r', 0);
-		});
+		jQuery('#r' + this.obj)[0].oncontextmenu = indexmenu_stopevt;
+		jQuery(document).click(
+			function() {
+				self.divdisplay('r', 0);
+			}
+		);
 	}
 };
 
