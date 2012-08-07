@@ -458,7 +458,7 @@ dTree.prototype.openCurNS = function(max) {
 			this.openTo(cn.id, false, true);
 			this.fajax = false;
 			if (cn.pid >= 0) {
-				addInitEvent(this.scroll("l", 4, cn.pid, 1));
+				jQuery(this.scroll("l", 4, cn.pid, 1));
 			}
 			break;
 		}
@@ -537,13 +537,13 @@ dTree.prototype.scroll = function(where, s, n, i) {
 		return false;
 	}
 	var w, dtree, dtreel, nodeId;
-	dtree = $('dtree_' + this.obj);
+	dtree = jQuery('#dtree_' + this.obj)[0];
 	dtreel = parseInt(dtree.offsetLeft, 0);
 	if (where == "r") {
 		$('left_' + this.obj).style.border = "thin inset";
 		this.scrollRight(dtreel, s);
 	} else {
-		nodeId = $('s' + this.obj + n);
+		nodeId = jQuery('#s' + this.obj + n)[0];
 		w = parseInt(dtree.parentNode.offsetWidth - nodeId.offsetWidth
 				- nodeId.offsetLeft, 0);
 		if (this.config.toc) {
