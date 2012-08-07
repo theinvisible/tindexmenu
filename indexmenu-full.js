@@ -375,12 +375,12 @@ dTree.prototype.nodeStatus = function(status, id, bottom) {
 		return;
 	}
 	var eJoin, eIcon;
-	eJoin = $('j' + this.obj + id);
-	eIcon = $('i' + this.obj + id);
+	eJoin = jQuery('#j' + this.obj + id)[0];
+	eIcon = jQuery('#i' + this.obj + id)[0];
 	eIcon.src = (status) ? this.aNodes[id].iconOpen : this.aNodes[id].icon;
 	eJoin.src = ((status) ? ((bottom) ? this.icon.minusBottom : this.icon.minus)
 			: ((bottom) ? this.icon.plusBottom : this.icon.plus));
-	$('d' + this.obj + id).style.display = (status) ? 'block' : 'none';
+	jQuery('#d' + this.obj + id)[0].style.display = (status) ? 'block' : 'none';
 };
 
 // [Cookie] Clears a cookie
@@ -498,7 +498,7 @@ dTree.prototype.fill = function(id) {
 	for (ln = rd.length - 1; ln >= 0; ln--) {
 		id = rd[ln];
 		a = this.aNodes[id];
-		eDiv = $('d' + this.obj + id);
+		eDiv = jQuery('#d' + this.obj + id)[0];
 		if (!eDiv) {
 			return false;
 		}
@@ -624,7 +624,7 @@ dTree.prototype.show_feat = function(n) {
 			self.stopscroll();
 		};
 		div.onmouseup = div.onmouseover;
-		dtree = $('dtree_' + this.obj);
+		dtree = jQuery('#dtree_' + this.obj)[0];
 		dtreel = parseInt(dtree.offsetLeft, 0);
 		w = parseInt(dtree.parentNode.offsetWidth - node.offsetWidth
 				- node.offsetLeft + 1, 0);
@@ -640,7 +640,7 @@ dTree.prototype.show_feat = function(n) {
 };
 
 dTree.prototype.resizescroll = function(status) {
-	var dtree, w, h, left = $('left_' + this.obj);
+	var dtree, w, h, left = jQuery('#left_' + this.obj)[0];
 	if (!left) {
 		return;
 	}
