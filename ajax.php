@@ -2,7 +2,7 @@
 /**
  * AJAX Backend for indexmenu
  *
- * @author Samuele Tognini <samuele@netsons.org>
+ * @author Samuele Tognini <samuele@netsons.org> mod. by Rene Hadler <rene.hadler@iteas.at>
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 

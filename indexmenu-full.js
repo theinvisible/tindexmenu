@@ -14,7 +14,13 @@
   | (http://www.gnu.org/licenses/gpl.html)            | 
   | Updated: 29.08.2009                               |
   |---------------------------------------------------|
-  | indexmenu  | wiki.splitbrain.org/plugin:indexmenu |
+  | Modified for Dokuwiki by                          |
+  | Rene Hadler <rene.hadler@iteas.at>                |
+  | under GPL 2 license                               |
+  | (http://www.gnu.org/licenses/gpl.html)            | 
+  | Updated: 07.08.2012                               |
+  |---------------------------------------------------|
+  | tindexmenu | https://bitbucket.org/iteas/tindexmenu/ |
   |--------------------------------------------------*/
 
 // Node object

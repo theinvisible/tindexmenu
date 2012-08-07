@@ -3,7 +3,7 @@
  * Indexmenu Action Plugin:   Indexmenu Component.
  * 
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Samuele Tognini <samuele@netsons.org>
+ * @author     Samuele Tognini <samuele@netsons.org> mod. by Rene Hadler <rene.hadler@iteas.at>
  */
  
 if(!defined('DOKU_INC')) die();
@@ -22,7 +22,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
 		 'date'   => rtrim(io_readFile(DOKU_PLUGIN.'indexmenu/VERSION.txt')),
 		 'name'   => 'Indexmenu (action plugin component)',
 		 'desc'   => 'Indexmenu action functions.',
-		 'url'    => 'http://wiki.splitbrain.org/plugin:indexmenu',
+		 'url'    => 'https://bitbucket.org/iteas/tindexmenu',
 		 );
   }
     
@@ -73,7 +73,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
     $event->data["script"][] = array (	"type" => "text/javascript",
 					"charset" => "utf-8",
 					"_data" => "",
-					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu-full.js"
+					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu.js"
 					);
  
     $event->data["script"][] = array (	"type" => "text/javascript",

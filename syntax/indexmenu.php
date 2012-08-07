@@ -3,7 +3,7 @@
  * Info Indexmenu: Displays the index of a specified namespace.
  *
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author      Samuele Tognini <samuele@netsons.org>
+ * @author      Samuele Tognini <samuele@netsons.org> mod. by Rene Hadler <rene.hadler@iteas.at>
  *
  */
 
