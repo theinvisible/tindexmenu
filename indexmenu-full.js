@@ -100,7 +100,7 @@ dTree.prototype.toString = function() {
     str += '<div id="dtree_'+this.obj+'" class="dtree '+this.config.theme+'" style="overflow:';
     if (this.config.scroll) { str += 'visible;position:relative;width:100%"';} else {str += 'hidden;"';}
     str += '>';
-    if ($('dtree_'+this.obj)) {str += '<div class="error">Indexmenu id conflict</div>';}
+    if (jQuery('#dtree_'+this.obj)[0]) {str += '<div class="error">Indexmenu id conflict</div>';}
     if (this.config.toc) {
 	str += '<div id="t' + this.obj + '" class="indexmenu_tocbullet '+this.config.theme+'" style="display:none;" title="Table of contents"></div>';
 	str += '<div id="toc_' + this.obj + '" style="display:none;"></div>';
@@ -604,7 +604,7 @@ dTree.prototype.contextmenu = function(n,e) {
 };
 
 dTree.prototype.divdisplay = function(obj,v) {
-    var o=$(obj+this.obj);
+    var o=jQuery('#'+obj+this.obj)[0];
     if (!o) {return false;}
     (v) ? o.style.display='inline': o.style.display='none' ;
 };
