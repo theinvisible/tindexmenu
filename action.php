@@ -73,7 +73,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
     $event->data["script"][] = array (	"type" => "text/javascript",
 					"charset" => "utf-8",
 					"_data" => "",
-					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu.js"
+					"src" => DOKU_BASE."lib/plugins/indexmenu/indexmenu-full.js"
 					);
  
     $event->data["script"][] = array (	"type" => "text/javascript",
