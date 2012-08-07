@@ -598,7 +598,7 @@ dTree.prototype.show_feat = function(n) {
 	var w, div, id, dtree, dtreel, self, node = jQuery('#s' + this.obj + n)[0];
 	self = this;
 	if (this.config.toc && node.className != "node") {
-		div = $('t' + this.obj);
+		div = jQuery('#t' + this.obj)[0];
 		id = (this.aNodes[n].hns) ? this.aNodes[n].hns : this.aNodes[n].dokuid;
 		div.onmousedown = function() {
 			indexmenu_createTocMenu('req=toc&id=' + decodeURIComponent(id),
