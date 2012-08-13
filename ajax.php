@@ -151,7 +151,7 @@ class ajax_indexmenu_plugin {
 		require_once(DOKU_PLUGIN.'indexmenu/syntax/indexmenu.php');
 		global $conf;
 		$idxm=new syntax_plugin_indexmenu_indexmenu();
-		$ns=$idxm->_parse_ns($ns);
+		$ns=$idxm->_parse_ns(rawurldecode($ns));
 		$level=-1;
 		$max=0;
 		$data = array();
