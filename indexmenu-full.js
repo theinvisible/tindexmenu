@@ -719,8 +719,8 @@ dTree.prototype.loadCss = function() {
 // Right click
 dTree.prototype.contextmenu = function(n, e) {
 	var li, id, html, type, node, self, cmenu, cdtree, rmenu, X = 0, Y = 0, i;
-	cdtree = $("cdtree_" + this.obj);
-	rmenu = $('r' + this.obj);
+	cdtree = jQuery("#cdtree_" + this.obj)[0];
+	rmenu = jQuery('#r' + this.obj)[0];
 	if (!rmenu) {
 		return true;
 	}
