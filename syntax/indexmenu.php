@@ -274,18 +274,18 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 			//remove unwanted nodes from standard index
 			$this->_clean_data($data);
 		} else {
+			//Nojs dokuwiki index
 			$output .= "<script type='text/javascript' charset='utf-8'>\n";
 			$output .= "<!--//--><![CDATA[//><!--\n";
 			$output .= "indexmenu_nojsqueue.push(new Array('".$js_name."','".utf8_encodeFN($js_opts['jsajax'])."'));\n";
 			$output .= "jQuery(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/indexmenu/nojsindex.js');});\n";
 			$output .= "//--><!]]>\n";
-			$output .= "</script>\n";
+			$output .= "</script>\n";	
+			$output.="\n".'<div id="nojs_'.$js_name.'" class="indexmenu_nojs"';
+			$output.=">\n";
+			$output.=html_buildlist($data,'idx',array($this,"_html_list_index"),"html_li_index");
+			$output.="</div>\n";
 		}
-		//Nojs dokuwiki index
-		$output.="\n".'<div id="nojs_'.$js_name.'" class="indexmenu_nojs"';
-		$output.=">\n";
-		$output.=html_buildlist($data,'idx',array($this,"_html_list_index"),"html_li_index");
-		$output.="</div>\n";
 		$output.=$output_tmp;
 		return $output;
 	}
