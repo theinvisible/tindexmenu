@@ -4,7 +4,7 @@
  *
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author      Samuele Tognini <samuele@netsons.org>
- * @author     Rene Hadler <rene.hadler@iteas.at>
+ * @author      Rene Hadler <rene.hadler@iteas.at>
  *
  */
 
@@ -13,6 +13,18 @@ if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR',DOKU_PLUGIN."tindexmenu/images");
 require_once(DOKU_PLUGIN.'syntax.php');
 require_once(DOKU_INC.'inc/search.php');
+
+/**
+*
+* Wrapper around deprecated search_callback. 
+* @deprecated 
+* 
+*/
+if(!function_exists("search_callback")) {
+	function search_callback($func,&$data,$base,$file,$type,$lvl,$opts) {
+		return call_user_func_array($func, array(&$data,$base,$file,$type,$lvl,$opts));
+	}
+}
 
 /**
  * All DokuWiki plugins to extend the parser/rendering mechanism
@@ -281,7 +293,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 			$output .= "indexmenu_nojsqueue.push(new Array('".$js_name."','".utf8_encodeFN($js_opts['jsajax'])."'));\n";
 			$output .= "jQuery(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/tindexmenu/nojsindex.js');});\n";
 			$output .= "//--><!]]>\n";
-			$output .= "</script>\n";	
+			$output .= "</script>\n";
 			$output.="\n".'<div id="nojs_'.$js_name.'" class="indexmenu_nojs"';
 			$output.=">\n";
 			$output.=html_buildlist($data,'idx',array($this,"_html_list_index"),"html_li_index");
