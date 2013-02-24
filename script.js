@@ -90,7 +90,10 @@ function indexmenu_showPicker(pickerid,btn){
 }
 
 function indexmenu_loadtoolbar(){
-    var toolbar = $('tool__bar');
+	var element = 'tool__bar';
+	var toolbar = null;
+	if (typeof element == 'string')
+		toolbar = document.getElementById(element);
     if(!toolbar) return;
     indexmenu_loadJs(DOKU_BASE+'lib/plugins/indexmenu/edit.js');
 }

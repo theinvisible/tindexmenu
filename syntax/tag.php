@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Info Indexmenu tag: Tag a page with a sort number. 
+ * Info tIndexmenu tag: Tag a page with a sort number. 
  *
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author      Samuele Tognini <samuele@netsons.org>
+ * @author     	 Rene Hadler <rene.hadler@iteas.at>
  * 
  */
  
@@ -23,12 +24,12 @@ class syntax_plugin_indexmenu_tag extends DokuWiki_Syntax_Plugin {
    */
   function getInfo(){
     return array(
-		 'author' => 'Samuele Tognini',
-		 'email'  => 'samuele@netsons.org',
-		 'date'   => rtrim(io_readFile(DOKU_PLUGIN.'indexmenu/VERSION.txt')),
-		 'name'   => 'Indexmenu tag',
-		 'desc'   => 'Indexmenu tag plugin.',
-		 'url'    => 'http://wiki.splitbrain.org/plugin:indexmenu'
+		 'author' => 'Samuele Tognini mod. by Rene Hadler',
+		 'email'  => 'samuele@netsons.org, rene.hadler@iteas.at',
+		 'date'   => rtrim(io_readFile(DOKU_PLUGIN.'tindexmenu/VERSION.txt')),
+		 'name'   => 'tIndexmenu tag',
+		 'desc'   => 'tIndexmenu tag plugin.',
+		 'url'    => 'http://wiki.splitbrain.org/plugin:tindexmenu'
 		 );
   }
   

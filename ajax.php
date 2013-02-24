@@ -1,9 +1,10 @@
 <?php
 /**
- * AJAX Backend for indexmenu
+ * AJAX Backend for tindexmenu
  *
- * @author Samuele Tognini <samuele@netsons.org> mod. by Rene Hadler <rene.hadler@iteas.at>
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Samuele Tognini <samuele@netsons.org>
+ * @author     Rene Hadler <rene.hadler@iteas.at>
  */
 
 //fix for Opera XMLHttpRequests
@@ -15,7 +16,7 @@ if(!defined('DOKU_INC')) define('DOKU_INC',realpath(dirname(__FILE__).'/../../..
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
 require_once(DOKU_INC.'inc/init.php');
 require_once(DOKU_INC.'inc/auth.php');
-if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR',DOKU_PLUGIN."indexmenu/images");
+if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR',DOKU_PLUGIN."tindexmenu/images");
 //close session
 session_write_close();
 
@@ -34,7 +35,7 @@ class ajax_indexmenu_plugin {
 		$succ=false;
 		//send the zip
 		if ($req == 'send' and isset($_REQUEST['t'])) {
-			include(DOKU_PLUGIN.'indexmenu/inc/repo.class.php');
+			include(DOKU_PLUGIN.'tindexmenu/inc/repo.class.php');
 			$repo=new repo_indexmenu_plugin;
 			$succ=$repo->send_theme($_REQUEST['t']);
 		}
@@ -66,7 +67,7 @@ class ajax_indexmenu_plugin {
 	 */
 
 	function local_themes() {
-		$list='indexmenu,'.DOKU_URL.",lib/plugins/indexmenu/images,";
+		$list='indexmenu,'.DOKU_URL.",lib/plugins/tindexmenu/images,";
 		$data=array();
 		$handle=@opendir(INDEXMENU_IMG_ABSDIR);
 		while (false !== ($file = readdir($handle))) {
@@ -148,7 +149,7 @@ class ajax_indexmenu_plugin {
 	 * @author Andreas Gohr <andi@splitbrain.org>
 	 */
 	function print_index($ns) {
-		require_once(DOKU_PLUGIN.'indexmenu/syntax/indexmenu.php');
+		require_once(DOKU_PLUGIN.'tindexmenu/syntax/indexmenu.php');
 		global $conf;
 		$idxm=new syntax_plugin_indexmenu_indexmenu();
 		$ns=$idxm->_parse_ns(rawurldecode($ns));

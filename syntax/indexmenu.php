@@ -1,15 +1,16 @@
 <?php
 /**
- * Info Indexmenu: Displays the index of a specified namespace.
+ * Info tIndexmenu: Displays the index of a specified namespace.
  *
  * @license     GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author      Samuele Tognini <samuele@netsons.org> mod. by Rene Hadler <rene.hadler@iteas.at>
+ * @author      Samuele Tognini <samuele@netsons.org>
+ * @author     Rene Hadler <rene.hadler@iteas.at>
  *
  */
 
 if(!defined('DOKU_INC')) define('DOKU_INC',realpath(dirname(__FILE__).'/../../').'/');
 if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR',DOKU_PLUGIN."indexmenu/images");
+if(!defined('INDEXMENU_IMG_ABSDIR')) define('INDEXMENU_IMG_ABSDIR',DOKU_PLUGIN."tindexmenu/images");
 require_once(DOKU_PLUGIN.'syntax.php');
 require_once(DOKU_INC.'inc/search.php');
 
@@ -29,12 +30,12 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 	 */
 	function getInfo(){
 		return array(
-				'author' => 'Samuele Tognini',
-				'email'  => 'samuele@netsons.org',
-				'date'   => rtrim(io_readFile(DOKU_PLUGIN.'indexmenu/VERSION.txt')),
-				'name'   => 'Indexmenu',
+				'author' => 'Samuele Tognini mod. by Rene Hadler',
+				'email'  => 'samuele@netsons.org, rene.hadler@iteas.at',
+				'date'   => rtrim(io_readFile(DOKU_PLUGIN.'tindexmenu/VERSION.txt')),
+				'name'   => 'tIndexmenu',
 				'desc'   => 'Insert the index of a specified namespace.',
-				'url'    => 'http://wiki.splitbrain.org/plugin:indexmenu'
+				'url'    => 'http://wiki.splitbrain.org/plugin:tindexmenu'
 		);
 	}
 
@@ -278,7 +279,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 			$output .= "<script type='text/javascript' charset='utf-8'>\n";
 			$output .= "<!--//--><![CDATA[//><!--\n";
 			$output .= "indexmenu_nojsqueue.push(new Array('".$js_name."','".utf8_encodeFN($js_opts['jsajax'])."'));\n";
-			$output .= "jQuery(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/indexmenu/nojsindex.js');});\n";
+			$output .= "jQuery(function(){indexmenu_loadJs(DOKU_BASE+'lib/plugins/tindexmenu/nojsindex.js');});\n";
 			$output .= "//--><!]]>\n";
 			$output .= "</script>\n";	
 			$output.="\n".'<div id="nojs_'.$js_name.'" class="indexmenu_nojs"';
