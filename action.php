@@ -30,7 +30,7 @@ class action_plugin_indexmenu extends DokuWiki_Action_Plugin {
 	/*
 	 * plugin should use this method to register its handlers with the dokuwiki's event controller
 	*/
-	function register(&$controller) {
+	function register(Doku_Event_Handler $controller) {
 		if ($this->getConf('only_admins')) $controller->register_hook('IO_WIKIPAGE_WRITE', 'BEFORE',  $this, '_checkperm');
 		if ($this->getConf('page_index') != '') $controller->register_hook('TPL_ACT_RENDER', 'BEFORE', $this, '_loadindex');
 		$controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, '_hookjs');
