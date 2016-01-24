@@ -79,7 +79,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 	/**
 	 * Handle the match
 	 */
-	function handle($match, $state, $pos, &$handler){
+	function handle($match, $state, $pos, Doku_Handler $handler){
 		$theme="default";
 		$ns=".";
 		$level = -1;
@@ -194,7 +194,7 @@ class syntax_plugin_indexmenu_indexmenu extends DokuWiki_Syntax_Plugin {
 	/**
 	 * Render output
 	 */
-	function render($mode, &$renderer, $data) {
+	function render($mode, Doku_Renderer $renderer, $data) {
 		global $ACT;
 		global $conf;
 		global $INFO;
